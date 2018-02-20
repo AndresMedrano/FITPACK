@@ -1,0 +1,7 @@
+[05-Feb-2018 09:00:55 America/New_York] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/anhhkdmx/public_html/fitpack/administrador/datatable2/clases/crud.php on line 26
+[05-Feb-2018 09:00:58 America/New_York] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/anhhkdmx/public_html/fitpack/administrador/datatable2/clases/crud.php on line 26
+[05-Feb-2018 09:01:00 America/New_York] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/anhhkdmx/public_html/fitpack/administrador/datatable2/clases/crud.php on line 26
+[06-Feb-2018 13:04:53 America/New_York] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/anhhkdmx/public_html/fitpack/administrador/datatable2/clases/crud.php on line 26
+[06-Feb-2018 13:05:15 America/New_York] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/anhhkdmx/public_html/fitpack/administrador/datatable2/clases/crud.php on line 26
+[06-Feb-2018 13:05:19 America/New_York] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/anhhkdmx/public_html/fitpack/administrador/datatable2/clases/crud.php on line 26
+[06-Feb-2018 13:05:45 America/New_York] PHP Warning:  mysqli_fetch_row() expects parameter 1 to be mysqli_result, boolean given in /home/anhhkdmx/public_html/fitpack/administrador/datatable2/clases/crud.php on line 26

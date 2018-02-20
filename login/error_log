@@ -1,0 +1,2 @@
+[26-Jan-2018 16:23:45 America/New_York] PHP Notice:  Undefined variable: con in /home/anhhkdmx/public_html/fitpack/administrador/login/index.php on line 5
+[26-Jan-2018 16:23:45 America/New_York] PHP Fatal error:  Call to a member function real_escape_string() on null in /home/anhhkdmx/public_html/fitpack/administrador/login/index.php on line 5
