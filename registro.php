@@ -176,7 +176,7 @@
                 <h5 class="breadcrumbs-title">CLIENTES</h5>
                 <ol class="breadcrumbs">
                     <li><a href="clientes.php"></a>Clientes</li>
-                    <li class="active">Ingrese todos los datos del Cliente</li>
+                    <li class="active">Registrar a un Cliente</li>
                 </ol>
               </div>
             </div>
@@ -187,32 +187,32 @@
 
         <!--start container-->
         <div class="container">
-          <p class="caption"></p>
-          <div class="divider"></div>
-
-            <div class="card-panel cyan lighten-5">
+          <div class="card-panel cyan lighten-5">
+            <div class="row">
+              <div class="col s12">
                   <form method="POST" action="carga-registro.php" enctype="multipart/form-data" >
-                  <div class="input-field">
+                  <h5>Datos del Cliente</h5>  
+                  <div class="input-field col s6">
                     <label class="active" for="Nombres">Nombres</label>
                     <input id="icon_prefix" type="text" name="txtnombre" required="required" maxlength="60" class="validate">
                   </div>
-                  <div class="input-field">
+                  <div class="input-field col s6">
                     <label>Apelidos</label>
                     <input type="text" name="txtapellidos" required="required" maxlength="60" class="validate">
                   </div>
-                  <div class="input-field">
+                  <div class="input-field col s6">
                     <label>Nick</label>
                     <input type="text" name="txtnick" required="required" maxlength="40" class="validate">
                   </div>
-                  <div class="input-field">
+                  <div class="input-field col s6">
                     <label>Cédula</label>
                     <input type="text" name="txtcedula" required="required" class="validate">
                   </div>
-                  <div class="">
+                  <div class="input-field col s6">
                     <label>Fecha de Nacimiento</label>
                     <input type="date" name="txtfechan" required="required" class="datepicker">
                   </div>
-                  <div class="input-field">
+                  <div class="input-field col s6">
                     <label>Sexo</label><br>
                     <select name="sexo" class="validate">
                       <option value="" disabled selected="" >Seleccione el Sexo</option>
@@ -220,34 +220,48 @@
                       <option>Masculino</option>
                     </select>
                   </div>
-                  <div class="input-field">
-                    <label>Correo</label>
+                  <div class="input-field col s12">
+                    <label>Correo</label> 
                     <input type="email" name="txtcorreo" required="required" class="validate">
                   </div>
-                  <div class="input-field">
+                  <div class="input-field col s6">
                     <label>Teléfono Fijo</label>
                     <input type="tel" name="txttelefonofijo" required="required" class="validate">
                   </div>
-                  <div class="input-field">
+                  <div class="input-field col s6">
                     <label>Teléfono Celular</label>
                     <input type="tel" name="txttelefonocelular" required="required" class="validate">
                   </div>
-                  <div class="input-field">
+                  <div class="input-field col s6">
                     <label>Ciudad</label>
                     <input type="text" name="txtciudad" required="required" class="validate">
                   </div>
-                  <div class="input-field">
+                  <div class="input-field col s6">
                     <label>Direcci&oacute;n</label>
                     <textarea name="txtdireccion" class="materialize-textarea"></textarea>
+                  </div><br>
+                  
+                  <br>
+                  <h5>Datos del Pago</h5>
+                  <div class="input-field col s6">
+                    <label>N&uacute;mero de Transferencia</label>
+                    <input type="text" name="txttransferencia" required="required" class="validate">
                   </div>
+                  <div class="input-field col s6">
+                    <label>Monto Transferido</label>
+                    <input type="text" name="txtmonto" required="required" class="validate">
+                  </div>
+
                     <input type="submit" name="" value="Registrar" class="waves-effect waves-light btn">
+
 
 
                   </form>
 
 
-                  
+                  </div>
                   <!--<div id="jsGrid-basic">-->
+                  </div>
                 </div>
                   <br>
               </div>
