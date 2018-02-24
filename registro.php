@@ -190,55 +190,55 @@
           <p class="caption"></p>
           <div class="divider"></div>
 
-            <div class="card-panel">
+            <div class="card-panel cyan lighten-5">
                   <form method="POST" action="carga-registro.php" enctype="multipart/form-data" >
                   <div class="input-field">
-                    <label>Nombres</label>
-                    <input type="text" name="txtnombre" required="required" maxlength="60">
+                    <label class="active" for="Nombres">Nombres</label>
+                    <input id="icon_prefix" type="text" name="txtnombre" required="required" maxlength="60" class="validate">
                   </div>
                   <div class="input-field">
                     <label>Apelidos</label>
-                    <input type="text" name="txtapellidos" required="required" maxlength="60">
+                    <input type="text" name="txtapellidos" required="required" maxlength="60" class="validate">
                   </div>
                   <div class="input-field">
                     <label>Nick</label>
-                    <input type="text" name="txtnick" required="required" maxlength="40">
+                    <input type="text" name="txtnick" required="required" maxlength="40" class="validate">
                   </div>
                   <div class="input-field">
                     <label>Cédula</label>
-                    <input type="text" name="txtcedula" required="required">
+                    <input type="text" name="txtcedula" required="required" class="validate">
                   </div>
                   <div class="">
                     <label>Fecha de Nacimiento</label>
-                    <input type="date" name="txtfechan" required="required">
+                    <input type="date" name="txtfechan" required="required" class="datepicker">
                   </div>
                   <div class="input-field">
                     <label>Sexo</label><br>
-                    <select name="sexo">
-                      <option selected="-">-</option>
+                    <select name="sexo" class="validate">
+                      <option value="" disabled selected="" >Seleccione el Sexo</option>
                       <option>Femenino</option>
                       <option>Masculino</option>
                     </select>
                   </div>
                   <div class="input-field">
                     <label>Correo</label>
-                    <input type="email" name="txtcorreo" required="required">
+                    <input type="email" name="txtcorreo" required="required" class="validate">
                   </div>
                   <div class="input-field">
                     <label>Teléfono Fijo</label>
-                    <input type="tel" name="txttelefonofijo" required="required">
+                    <input type="tel" name="txttelefonofijo" required="required" class="validate">
                   </div>
                   <div class="input-field">
                     <label>Teléfono Celular</label>
-                    <input type="tel" name="txttelefonocelular" required="required">
+                    <input type="tel" name="txttelefonocelular" required="required" class="validate">
                   </div>
                   <div class="input-field">
                     <label>Ciudad</label>
-                    <input type="text" name="txtciudad" required="required">
+                    <input type="text" name="txtciudad" required="required" class="validate">
                   </div>
-                  <div class="">
+                  <div class="input-field">
                     <label>Direcci&oacute;n</label>
-                    <textarea name="txtdireccion"></textarea>
+                    <textarea name="txtdireccion" class="materialize-textarea"></textarea>
                   </div>
                     <input type="submit" name="" value="Registrar" class="waves-effect waves-light btn">
 
