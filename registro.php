@@ -3,6 +3,8 @@
   require_once "datatable/php/conexion.php";
   $conexion=conexion();
   header("Content-Type: text/html;charset=utf-8");
+$hoy = getdate();
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -187,11 +189,11 @@
 
         <!--start container-->
         <div class="container">
-          <div class="card-panel cyan lighten-5">
+          <div class="card-panel">
             <div class="row">
               <div class="col s12">
                   <form method="POST" action="carga-registro.php" enctype="multipart/form-data" >
-                  <h5>Datos del Cliente</h5>  
+                  <h5 >Datos del Cliente</h5>  
                   <div class="input-field col s6">
                     <label class="active" for="Nombres">Nombres</label>
                     <input id="icon_prefix" type="text" name="txtnombre" required="required" maxlength="60" class="validate">
@@ -216,13 +218,13 @@
                     <label>Sexo</label><br>
                     <select name="sexo" class="validate">
                       <option value="" disabled selected="" >Seleccione el Sexo</option>
-                      <option>Femenino</option>
-                      <option>Masculino</option>
+                      <option value="Femenino">Femenino</option>
+                      <option value="Masculino">Masculino</option>
                     </select>
                   </div>
                   <div class="input-field col s12">
                     <label>Correo</label> 
-                    <input type="email" name="txtcorreo" required="required" class="validate">
+                    <input type="email" name="txtcorreo" placeholder="fitpack@fitpack.com.ve" required="required" class="validate">
                   </div>
                   <div class="input-field col s6">
                     <label>Teléfono Fijo</label>
@@ -250,6 +252,27 @@
                   <div class="input-field col s6">
                     <label>Monto Transferido</label>
                     <input type="text" name="txtmonto" required="required" class="validate">
+                  </div>
+                  <div class="input-field col s6">
+                    <select name="cuotas" class="validate">
+                      <option value="" disabled selected="" >Cantidad de Cuotas</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                      <option value="6">6</option>
+                      <option value="7">7</option>
+                      <option value="8">8</option>
+                      <option value="9">9</option>
+                      <option value="10">10</option>
+                      <option value="11">11</option>
+                      <option value="12">12</option>
+                    </select>
+                  </div>
+                  <div class="input-field col s6">
+                    <label>Fecha de Pago</label>
+                    <input type="text" name="txtfecha" required="required" class="validate" value="<?php echo date("Y/m/d");?>">
                   </div>
 
                     <input type="submit" name="" value="Registrar" class="waves-effect waves-light btn">
