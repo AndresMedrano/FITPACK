@@ -41,7 +41,6 @@
   <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
   <!--Data Tables-->
   <link href="js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-
 </head>
 
 <body>
@@ -135,7 +134,7 @@
                           <ul>
                               <li><a href="#">Todos los Gimnasios</a>
                               </li>
-                              <li><a href="#">Gimnasios Quito</a>
+                              <li><a href="gimnasios.php">Gimnasios Quito</a>
                               </li>
                               <li><a href="#">Gimnasios Cumbaya </a>
                               </li>
@@ -193,23 +192,8 @@
           <div class="divider"></div>
 
             <div class="row">
-              <div class="col s12 m12 19">
-                <?php
-                  if(isset($_GET['action']) == 'delete'){
-                    $id_delete = intval($_GET['id']);
-                    $query = mysqli_query($_SESSION, "SELECT * FROM miembros WHERE id='$id_delete'");
-                      if(mysqli_num_rows($query) == 0){
-                          echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> No se encontraron datos.</div>';
-                      }else{
-                          $delete = mysqli_query($conn, "DELETE FROM miembros WHERE id='$id_delete'");
-                            if($delete){
-                              echo '<div class="alert alert-primary alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>  Bien hecho, los datos han sido eliminados correctamente.</div>';
-                            }else{
-                              echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Error, no se pudo eliminar los datos.</div>';
-                            }
-                      }
-                  }
-                ?>
+              
+                
 
                   <table id="data-table-simple" class="responsive-table display" cellspacing = "0">
                     <thead bgcolor="#eeeeee" align="center" >
@@ -222,42 +206,80 @@
                             <th class="text-center"> Acciones </th>
                         </tr>
                     </thead>
-
-                    <tfoot bgcolor="#eeeeee" align="center">
-                        <tr>
-                          <th>CÉDULA</th>
-                          <th>NOMBRES</th>
-                          <th>CELULAR</th>
-                          <th>CORREO</th>
-                          <th>DIRECCIÓN</th>
-                          <th class="text-center"> Acciones </th>
-                        </tr>
-                    </tfoot>
-
                     <tbody>
                       <?php
                       while ($mostrar=mysqli_fetch_row($result)) {
                         ?>
                         <tr >
-                          <td><?php echo $mostrar[0] ?></td>
                           <td><?php echo $mostrar[1] ?></td>
                           <td><?php echo $mostrar[2] ?></td>
-                          <td><?php echo $mostrar[3] ?></td>
-                          <td><?php echo $mostrar[4] ?></td>
-                          <!-- <td style="text-align: center;">
-                            <span class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEditar" onclick="agregaFrmActualizar('<?php echo $mostrar[0] ?>')">
-                              <span class="fa fa-pencil-square-o"></span>
-                            </span>
-                          </td> -->
+                          <td><?php echo $mostrar[8] ?></td>
+                          <td><?php echo $mostrar[6] ?></td>
+                          <td><?php echo $mostrar[10] ?></td>
                           <td style="text-align: center;">
-                            <span class="waves-effect mdi-editor-border-color btn" data-toggle="modal" data-target="#modalEditar" onclick="agregaFrmActualizar('<?php echo $mostrar[0] ?>')">
-                              <span class="fa fa-pencil-square-o"></span>
-                            </span>
-                            <span class="waves-effect mdi-action-delete btn" onclick="eliminarDatos('<?php echo $mostrar[0] ?>')">
-                              <span class="fa fa-trash"></span>
-                            </span>
+                            <a class="btn modal-trigger" data-target="modalEditarCliente" onclick="agregaFrmActualizar('<?php echo $mostrar[0] ?>')">Actualizar</button>                    
                           </td>
                         </tr>
+                        <!--Modal Estructura!-->
+                        <div id="modalEditarCliente" class="modal">
+                          
+                          <form method="POST" action="carga-modificacion.php" enctype="multipart/form-data" >
+                            <div class="modal-content">
+                            <h5>Actualizar Datos del Cliente</h5>
+                            <div class="input-field col s6">
+                              <label class="active" for="Cedula">C&eacute;dula</label>
+                              <input id="icon_prefix" type="text" name="txtcedula" value="<?php echo ($mostrar[1])?>">
+                            </div>
+                            <div class="input-field col s6">
+                              <label class="active" for="cliente">N&uacute;mero de Cliente</label>
+                              <input id="icon_prefix" type="text" name="txtcliente" readonly="readonly" value="<?php echo ($mostrar[0])?>">
+                            </div>
+                            <div class="input-field col s6">
+                              <label class="active" for="Nombres">Nombres y Apellidos</label>
+                              <input id="icon_prefix" type="text" name="txtnombre" readonly="readonly" value="<?php echo ($mostrar[2])?>">
+                            </div>
+                            <div class="input-field col s6">
+                              <label>Nick</label>
+                              <input type="text" name="txtnick" readonly="readonly" value="<?php echo ($mostrar[3])?>">
+                            </div>
+                            <div class="input-field col s6">
+                              <label>Fecha de Nacimiento</label>
+                              <input type="text" name="txtfecha" readonly="readonly" value="<?php echo ($mostrar[4])?>">
+                            </div>
+                            <div class="input-field col s6">
+                              <label>Sexo</label><br>
+                              <input type="text" name="txtsexo" readonly="readonly" value="<?php echo ($mostrar[5])?>">
+                            </div>
+                            <h6>Datos Modificables</h6>
+                            <div class="input-field col s12">
+                              <label>Correo</label> 
+                              <input type="email" name="txtcorreo" required="required" class="validate" value="<?php echo ($mostrar[6])?>">
+                            </div>
+                            <div class="input-field col s6">
+                              <label>Teléfono Fijo</label>
+                              <input type="tel" name="txttelefonofijo" required="required" class="validate" value="<?php echo ($mostrar[7])?>">
+                              </div>
+                            <div class="input-field col s6">
+                              <label>Teléfono Celular</label>
+                              <input type="tel" name="txttelefonocelular" required="required" class="validate" value="<?php echo ($mostrar[8])?>">
+                            </div>
+                            <div class="input-field col s6">
+                              <label>Ciudad</label>
+                              <input type="text" name="txtciudad" required="required" class="validate" value="<?php echo ($mostrar[9])?>">
+                            </div>
+                            <div class="input-field col s6">
+                              <label>Direcci&oacute;n</label>
+                              <textarea name="txtdireccion" class="materialize-textarea"><?php echo ($mostrar[10])?></textarea>
+                            </div>
+
+                            <div class="modal-footer"><input type="submit" name="" value="Registrar" class="waves-effect waves-light btn">
+    </div>
+                            </div>
+                          </form>
+    </div>
+    
+  </div>
+                          </div>
                         <?php
                       }
                       ?>
