@@ -132,7 +132,7 @@
                     <li class="bold"><a class="collapsible-header  waves-effect waves-red"><i class="mdi-action-store"></i> Gimnasios </a>
                         <div class="collapsible-body">
                           <ul>
-                              <li><a href="#">Todos los Gimnasios</a>
+                              <li><a href="gimnasios.php">Todos los Gimnasios</a>
                               </li>
                               <li><a href="gimnasios.php">Gimnasios Quito</a>
                               </li>
