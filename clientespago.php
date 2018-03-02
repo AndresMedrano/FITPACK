@@ -121,6 +121,8 @@
                             <ul>
                                 <li><a href="clientes.php">Todos los Clientes</a>
                                 </li>
+                                <li><a href="registro.php">Registro de Clientes</a>
+                                </li>
                                 <li class="active"><a href="clientespago.php">Clientes Pagos</a>
                                 </li>
                                 <li><a href="clientesnopago.php">Clientes no Pagos </a>
@@ -133,7 +135,7 @@
                     <li class="bold"><a class="collapsible-header  waves-effect waves-red"><i class="mdi-action-store"></i> Gimnasios </a>
                         <div class="collapsible-body">
                           <ul>
-                              <li><a href="#">Todos los Gimnasios</a>
+                              <li><a href="clientesnopago.php">Todos los Gimnasios</a>
                               </li>
                               <li><a href="#">Gimnasios Quito</a>
                               </li>
