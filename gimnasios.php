@@ -133,16 +133,13 @@
                     <li class="bold"><a class="collapsible-header  waves-effect waves-red"><i class="mdi-action-store"></i> Gimnasios </a>
                         <div class="collapsible-body">
                           <ul>
-                              <li><a href="#">Clases</a>
+                              <li><a href="#">Todos los Gimnasios</a>
                               </li>
-                              <li><a href="gimnasios.php">Cargar Clases</a>
+                              <li><a href="gimnasios.php">Gimnasios Quito</a>
                               </li>
-                              <li><a href="#">Actualizar Clases</a>
+                              <li><a href="#">Gimnasios Cumbaya </a>
                               </li>
-                              <li><a href="#">Mensualidades</a>
-                              </li>
-                              <li><a href="#">Clases Adicionales</a>
-                              </li>
+                              <li><a href="#">Subir Clases</a></li>
                           </ul>
                         </div>
                     </li>
@@ -205,7 +202,7 @@
                             <th>Telefono Fijo</th>
                             <th>Telefono Celular</th>
                             <th>Web</th>
-                            <th class="text-center"> Acciones </th>
+                            <th class="text-center"> Informaci&oacute;n </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -219,8 +216,10 @@
                           <td><?php echo $mostrar[5] ?></td>
                           <td><?php echo $mostrar[8] ?></td>
                           <td style="text-align: center;">
-                            <a href="#modalEditarCliente" class="btn modal-trigger" data-target="modalEditarCliente"><i class="large material-icons">update</i></a>                    
+                            <a href="#modalEditarCliente" class="btn modal-trigger" data-target="modalEditarCliente"><i class="material-icons">info</i></a><br>
+                            <a href="#modalEditarCliente" class="btn modal-trigger" data-target="modalEditarCliente"><i class="material-icons">update</i></a>                      
                           </td>
+                          
                         </tr>
                         <!--Modal Estructura!-->
                         <div id="modalEditarCliente" class="modal">
@@ -230,7 +229,7 @@
                             <h5>Datos del Aliado</h5>
                             <div class="input-field col s6">
                               <label class="active" for="Cedula">Nombres y Apellidos</label>
-                              <input id="icon_prefix" type="text" name="txtaliado" value="<?php echo ($mostrar[0])?>">
+                              <input id="icon_prefix" type="text" name="txtaliado" readonly="readonly" value="<?php echo ($mostrar[0])?>">
                             </div>
                             <div class="input-field col s6">
                               <label class="active" for="cliente">Ciudad</label>
@@ -249,28 +248,25 @@
                               <input type="text" name="txttelefonocelular" readonly="readonly" value="<?php echo ($mostrar[5])?>">
                             </div>
                             <div class="input-field col s6">
-                              <label class="active" for="Nombres">Entrenamientos</label>
-                              <textarea name="txtentrenamientos" class="materialize-textarea"><?php echo ($mostrar[7])?></textarea>
-                            </div>
-                            <div class="input-field col s6">
                               <label>WEB</label>
-                              <input type="text" name="txtweb" required="required" class="validate" value="<?php echo ($mostrar[8])?>">
+                              <input type="text" name="txtweb" readonly="readonly" class="validate" value="<?php echo ($mostrar[8])?>">
                             </div>
                             <div class="input-field col s6">
                               <label>Redes Sociales</label>
-                              <input type="text" name="txtredes" required="required" class="validate" value="<?php echo ($mostrar[9])?>">
+                              <input type="text" name="txtredes" readonly="readonly" class="validate" value="<?php echo ($mostrar[9])?>">
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12">
+                              <label class="active" for="Nombres">Entrenamientos</label>
+                              <textarea name="txtentrenamientos" class="materialize-textarea"><?php echo ($mostrar[7])?></textarea>
+                            </div>
+                            <div class="input-field col s12">
                               <label class="active" for="Nombres">Local y Direcci&oacute;n</label>
                               <textarea name="txtdireccion" class="materialize-textarea"><?php echo ($mostrar[2])?></textarea>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12">
                               <label class="active" for="Nombres">Descripci&oacute;n</label>
                               <textarea name="txtdescripcion" class="materialize-textarea"><?php echo ($mostrar[6])?></textarea>
                             </div>
-
-                            <div class="modal-footer"><input type="submit" name="" value="Registrar" class="waves-effect waves-light btn">
-    </div>
                             </div>
                           </form>
     </div>
